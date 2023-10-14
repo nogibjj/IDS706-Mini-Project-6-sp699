@@ -46,7 +46,7 @@ def load_database_two(dataset="Data/authors.csv", encoding="utf-8"):
     c.execute("DROP TABLE IF EXISTS authors")
     c.execute(
         """
-        CREATE TABLE subset (
+        CREATE TABLE authors (
             id INTEGER,
             first_name TEXT,
             last_name TEXT
@@ -56,7 +56,7 @@ def load_database_two(dataset="Data/authors.csv", encoding="utf-8"):
     # insert
     c.executemany(
         """
-        INSERT INTO subset (
+        INSERT INTO authors (
             id,
             first_name,
             last_name
