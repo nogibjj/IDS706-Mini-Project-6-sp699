@@ -39,20 +39,24 @@ def test_join():
     cursor = conn.cursor()
 
     # Insert test data into the dummy database
-    cursor.execute("CREATE TABLE authors (id INTEGER, first_name TEXT, last_name TEXT);")
-    cursor.execute("CREATE TABLE books (id INTEGER, title TEXT, author_id INTEGER);")
+    cursor.execute("CREATE TABLE IF NOT EXISTS authors (id INTEGER, first_name TEXT, last_name TEXT);")
+    cursor.execute("CREATE TABLE IF NOT EXISTS books (id INTEGER, title TEXT, author_id INTEGER);")
+
+    # Insert test data into the dummy database
     cursor.executemany("INSERT INTO authors VALUES (?, ?, ?);", [(1, 'Ellen', 'Writer'), (2, 'Olga', 'Savelieva')])
-    cursor.executemany("INSERT INTO books VALUES (?, ?, ?);", [(1, 'Time to Grow Up!', 11), (5, 'Oranges', 12)])
+    cursor.executemany("INSERT INTO books VALUES (?, ?, ?);", [(1, 'Time to Grow Up!', 1), (5, 'Oranges', 2)])
 
     # Execute the join function
     results = join()
 
-    # Compare with expected results
+    # Close the database connection
+    conn.close()
+
+    # Compare the results with expected results
     expected_results = [(1, 'Time to Grow Up!', 'Ellen', 'Writer'), (5, 'Oranges', 'Olga', 'Savelieva')]
-    
     assert results == expected_results, "Test failed: The results do not match the expected output."
 
-    print("Test passed: The join function worked correctly.")
+    print("Test passed: join function works correctly.")
 
 """
 def test_aggregation():
