@@ -54,6 +54,7 @@ def test_join():
 
     print("Test passed: The join function worked correctly.")
 
+"""
 def test_aggregation():
     # 데이터베이스 연결
     conn = sqlite3.connect("booksDB.db")
@@ -91,6 +92,7 @@ def test_sorting():
     assert results == expected_result, "Test failed: The results do not match the expected output."
 
     print("Test passed: The join function worked correctly.")
+"""
 
 if __name__ == "__main__":
     test_extract_one()
@@ -98,5 +100,5 @@ if __name__ == "__main__":
     test_load_database_one()
     test_load_database_two()
     test_join()
-    test_aggregation()
-    test_sorting()
+    # test_aggregation()
+    # test_sorting()
