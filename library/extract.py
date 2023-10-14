@@ -1,8 +1,15 @@
 # Extract csv file through link
 import requests
 
-def extract(url="https://github.com/suim-park/Mini-Project-5/blob/main/Data/subset.csv", 
-            file_path="Data/subset.csv"):
+def extract_one(url="https://github.com/suim-park/Mini-Project-6/blob/main/Data/books.csv", 
+            file_path="Data/books.csv"):
+    with requests.get(url, timeout=10) as r:
+        with open(file_path, 'wb') as f:
+            f.write(r.content)
+    return file_path
+
+def extract_two(url="https://github.com/suim-park/Mini-Project-6/blob/main/Data/authors.csv", 
+            file_path="Data/authors.csv"):
     with requests.get(url, timeout=10) as r:
         with open(file_path, 'wb') as f:
             f.write(r.content)
