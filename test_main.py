@@ -47,7 +47,7 @@ def test_join():
     cursor.executemany("INSERT INTO books VALUES (?, ?, ?);", [(1, 'Time to Grow Up!', 1), (5, 'Oranges', 2)])
 
     # Execute the join function
-    results = join()
+    results = join(conn)
 
     # Close the database connection
     conn.close()
