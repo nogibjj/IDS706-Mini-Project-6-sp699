@@ -34,26 +34,11 @@ def test_load_database_two():
         print("Failed to load the database")
 
 def test_join():
-    # Create a dummy database for testing
-    conn = sqlite3.connect(":memory:")
-    cursor = conn.cursor()
-
-    # Insert test data into the dummy database
-    cursor.execute("CREATE TABLE IF NOT EXISTS authors (id INTEGER, first_name TEXT, last_name TEXT);")
-    cursor.execute("CREATE TABLE IF NOT EXISTS books (id INTEGER, title TEXT, author_id INTEGER);")
-
-    # Insert test data into the dummy database
-    cursor.executemany("INSERT INTO authors VALUES (?, ?, ?);", [(1, 'Ellen', 'Writer'), (2, 'Olga', 'Savelieva')])
-    cursor.executemany("INSERT INTO books VALUES (?, ?, ?);", [(1, 'Time to Grow Up!', 1), (5, 'Oranges', 2)])
-
     # Execute the join function
-    results = join(conn)
-
-    # Close the database connection
-    conn.close()
+    results = join()
 
     # Compare the results with expected results
-    expected_results = [(1, 'Time to Grow Up!', 'Ellen', 'Writer'), (5, 'Oranges', 'Olga', 'Savelieva')]
+    expected_results = [(1, 'Time to Grow Up!', 'Ellen', 'Writer'), (2, 'Your Trip', 'Yao', 'Dou'), (3, 'Lovely Love', 'Donald', 'Brain'), (4, 'Dream Your Life', 'Ellen', 'Writer'), (5, 'Oranges', 'Olga', 'Savelieva'), (6, 'Your Happy Life', 'Yao', 'Dou'), (7, 'Applied AI', 'Jack', 'Smart'), (8, 'My Last Book', 'Ellen', 'Writer')]
     assert results == expected_results, "Test failed: The results do not match the expected output."
 
     print("Test passed: join function works correctly.")
