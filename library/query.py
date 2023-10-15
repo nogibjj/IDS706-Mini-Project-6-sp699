@@ -19,8 +19,8 @@ def join():
 
     # SQL 쿼리 실행 (authors 데이터베이스)
     authors_query = """
-    SELECT id, first_name, last_name
-    FROM authors;
+    SELECT c.id, c.first_name, c.last_name
+    FROM authors c;
     """
     authors_cursor.execute(authors_query)
 
@@ -88,3 +88,6 @@ def sorting():
     conn.close()
 
     return results
+
+if __name__ == "__main__":
+    join()
