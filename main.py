@@ -1,6 +1,6 @@
 from library.extract import extract_one, extract_two
 from library.transform import load_database_one, load_database_two
-from library.query import join, aggregation, sorting
+from library.query import join, aggregation, sorting, complex
 
 if __name__ == "__main__":
     extract_one(url="https://github.com/suim-park/Mini-Project-6/raw/main/Data/books.csv", 
@@ -12,3 +12,4 @@ if __name__ == "__main__":
     print(join())
     aggregation()
     sorting()
+    complex()

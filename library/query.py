@@ -86,7 +86,31 @@ def sorting():
 
     return results
 
+def complex():
+    # 'booksDB' 데이터베이스 연결
+    conn = sqlite3.connect("booksDB.db")
+    cursor = conn.cursor()
+
+    # SQL 쿼리 실행 (Select Translated Books and Sort by Title)
+    query = """
+    SELECT id, title
+    FROM books
+    WHERE type = 'translated'
+    ORDER BY title ASC;
+    """
+    cursor.execute(query)
+
+    # 결과 가져오기
+    results = cursor.fetchall()
+
+    # 연결 닫기
+    conn.close()
+
+    # 결과 반환
+    return results
+
 if __name__ == "__main__":
     join()
     aggregation()
     sorting()
+    complex()
