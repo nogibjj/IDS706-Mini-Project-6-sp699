@@ -1,7 +1,7 @@
 # test main.py
 from library.extract import extract_one, extract_two
 from library.transform import load_database_one, load_database_two
-from library.query import join, aggregation, sorting, complex
+from library.query import join, aggregation, sorting, complex_query
 
 import sqlite3
 
@@ -66,7 +66,7 @@ def test_sorting():
 
     print("Test passed: The join function worked correctly.")
 
-def test_complex():
+def test_complex_query():
     results = complex()
 
     expected_result = [(7, 'Applied AI'), (5, 'Oranges'), (6, 'Your Happy Life'), (2, 'Your Trip')]
@@ -84,4 +84,4 @@ if __name__ == "__main__":
     test_join()
     test_aggregation()
     test_sorting()
-    text_complex()
+    test_complex_query()

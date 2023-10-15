@@ -86,7 +86,7 @@ def sorting():
 
     return results
 
-def complex():
+def complex_query():
     # 'booksDB' 데이터베이스 연결
     conn = sqlite3.connect("booksDB.db")
     cursor = conn.cursor()
@@ -113,4 +113,4 @@ if __name__ == "__main__":
     join()
     aggregation()
     sorting()
-    complex()
+    complex_query()
