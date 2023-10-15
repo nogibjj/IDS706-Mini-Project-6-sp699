@@ -67,7 +67,7 @@ def test_sorting():
     print("Test passed: The join function worked correctly.")
 
 def test_complex_query():
-    results = complex()
+    results = complex_query()
 
     expected_result = [(7, 'Applied AI'), (5, 'Oranges'), (6, 'Your Happy Life'), (2, 'Your Trip')]
 
