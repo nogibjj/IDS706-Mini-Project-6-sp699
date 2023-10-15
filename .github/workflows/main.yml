@@ -1,4 +1,4 @@
-name: SQL Database
+name: Complex SQL Query
 on:
   push:
     branches: [ "main" ]
