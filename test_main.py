@@ -38,7 +38,7 @@ def test_join():
     results = join()
     print(results)
 
-    Compare the results with expected results
+    # Compare the results with expected results
     expected_results = [(1, 'Time to Grow Up!', 'Ellen', 'Writer'), (2, 'Your Trip', 'Yao', 'Dou'), (3, 'Lovely Love', 'Donald', 'Brain'), (4, 'Dream Your Life', 'Ellen', 'Writer'), (5, 'Oranges', 'Olga', 'Savelieva'), (6, 'Your Happy Life', 'Yao', 'Dou'), (7, 'Applied AI', 'Jack', 'Smart'), (8, 'My Last Book', 'Ellen', 'Writer')]
     assert results == expected_results, "Test failed: The results do not match the expected output."
 
