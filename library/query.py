@@ -42,6 +42,8 @@ def join():
             author_first_name, author_last_name = author_info[0][1], author_info[0][2]
             combined_results.append((book_id, book_title, author_first_name, author_last_name))
 
+    print(combined_results)
+
     return combined_results
 
 def aggregation():
@@ -62,6 +64,8 @@ def aggregation():
 
     # Close connection
     conn.close()
+
+    print(result)
 
     return result
 
@@ -84,6 +88,8 @@ def sorting():
     # Close connection
     conn.close()
 
+    print(results)
+
     return results
 
 def complex_query():
@@ -105,6 +111,8 @@ def complex_query():
 
     # Close connection
     conn.close()
+
+    print(results)
 
     # Return results
     return results

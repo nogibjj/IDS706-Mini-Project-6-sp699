@@ -3,10 +3,14 @@ from library.transform import load_database_one, load_database_two
 from library.query import join, aggregation, sorting, complex_query
 
 if __name__ == "__main__":
-    extract_one(url="https://github.com/suim-park/Mini-Project-6/raw/main/Data/books.csv", 
-            file_path="Data/books.csv")
-    extract_two(url="https://github.com/suim-park/Mini-Project-6/raw/main/Data/authors.csv", 
-            file_path="Data/authors.csv")
+    extract_one(
+        url="https://github.com/suim-park/Mini-Project-6/raw/main/Data/books.csv",
+        file_path="Data/books.csv",
+    )
+    extract_two(
+        url="https://github.com/suim-park/Mini-Project-6/raw/main/Data/authors.csv",
+        file_path="Data/authors.csv",
+    )
     load_database_one()
     load_database_two()
     join()
