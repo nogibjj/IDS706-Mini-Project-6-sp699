@@ -1,15 +1,15 @@
 import sqlite3
 
 def join():
-    # 'booksDB' 데이터베이스 연결
+    # Connect to 'booksDB' database
     books_conn = sqlite3.connect("booksDB.db")
     books_cursor = books_conn.cursor()
 
-    # 'authorsDB' 데이터베이스 연결
+    # Connect to 'authorsDB' database
     authors_conn = sqlite3.connect("authorsDB.db")
     authors_cursor = authors_conn.cursor()
 
-    # SQL 쿼리 실행 (books 데이터베이스)
+    # Execute SQL queries (books database)
     books_query = """
     SELECT b.id, b.title, b.author_id
     FROM books b
@@ -17,22 +17,22 @@ def join():
     """
     books_cursor.execute(books_query)
 
-    # SQL 쿼리 실행 (authors 데이터베이스)
+    # Execute SQL queries (authors database)
     authors_query = """
     SELECT c.id, c.first_name, c.last_name
     FROM authors c;
     """
     authors_cursor.execute(authors_query)
 
-    # 결과 가져오기
+    # Fetch results
     books_results = books_cursor.fetchall()
     authors_results = authors_cursor.fetchall()
 
-    # 연결 닫기
+    # Close connections
     books_conn.close()
     authors_conn.close()
 
-    # 결과 조합
+    # Combine results
     combined_results = []
 
     for book_result in books_results:
@@ -48,7 +48,7 @@ def aggregation():
     conn = sqlite3.connect("booksDB.db")
     cursor = conn.cursor()
 
-    # SQL 쿼리 실행
+    # Execute SQL query
     query = """
     SELECT type, COUNT(*) as original_count
     FROM books
@@ -57,20 +57,20 @@ def aggregation():
     """
     cursor.execute(query)
 
-    # 결과 가져오기
+    # Fetch result
     result = cursor.fetchone()
 
-    # 연결 닫기
+    # Close connection
     conn.close()
 
     return result
 
 def sorting():
-    # 데이터베이스 연결
+    # Connect to the database
     conn = sqlite3.connect("booksDB.db")
     cursor = conn.cursor()
 
-    # SQL 쿼리 실행
+    # Execute SQL query
     query = """
     SELECT id, title
     FROM books
@@ -78,20 +78,20 @@ def sorting():
     """
     cursor.execute(query)
 
-    # 결과 가져오기
+    # Fetch results
     results = cursor.fetchall()
 
-    # 연결 닫기
-    conn.close()
+    # Close connection
+    conn close()
 
     return results
 
 def complex_query():
-    # 'booksDB' 데이터베이스 연결
+    # Connect to 'booksDB' database
     conn = sqlite3.connect("booksDB.db")
     cursor = conn.cursor()
 
-    # SQL 쿼리 실행 (Select Translated Books and Sort by Title)
+    # Execute SQL query (Select Translated Books and Sort by Title)
     query = """
     SELECT id, title
     FROM books
@@ -100,13 +100,13 @@ def complex_query():
     """
     cursor.execute(query)
 
-    # 결과 가져오기
+    # Fetch results
     results = cursor.fetchall()
 
-    # 연결 닫기
+    # Close connection
     conn.close()
 
-    # 결과 반환
+    # Return results
     return results
 
 if __name__ == "__main__":

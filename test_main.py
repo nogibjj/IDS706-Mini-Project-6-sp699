@@ -43,28 +43,27 @@ def test_join():
 
     print("Test passed: join function works correctly.")
 
-
 def test_aggregation():
-    # aggregation 함수 실행
+    # Execute the aggregation function
     result = aggregation()
 
-    # 예상 결과와 비교
-    expected_result = ('original', 4)  # 예상 결과: ('original', 2)
+    # Compare the result with expected result
+    expected_result = ('original', 4)  # Expected result: ('original', 4)
 
     assert result == expected_result, "Test failed: The results do not match the expected output."
 
-    print("Test passed: The join function worked correctly.")
+    print("Test passed: The aggregation function works correctly.")
 
 def test_sorting():
-    # sorting 함수 실행
+    # Execute the sorting function
     results = sorting()
 
-    # 예상 결과와 비교
-    expected_result = [(7, 'Applied AI'), (4, 'Dream Your Life'), (3, 'Lovely Love'), (8, 'My Last Book'), (5, 'Oranges'), (1, 'Time to Grow Up!'), (6, 'Your Happy Life'), (2, 'Your Trip')]  # 예상 결과
+    # Compare the results with expected result
+    expected_result = [(7, 'Applied AI'), (4, 'Dream Your Life'), (3, 'Lovely Love'), (8, 'My Last Book'), (5, 'Oranges'), (1, 'Time to Grow Up!'), (6, 'Your Happy Life'), (2, 'Your Trip')]  # Expected result
 
     assert results == expected_result, "Test failed: The results do not match the expected output."
 
-    print("Test passed: The join function worked correctly.")
+    print("Test passed: The sorting function works correctly.")
 
 def test_complex_query():
     results = complex_query()
@@ -73,8 +72,7 @@ def test_complex_query():
 
     assert results == expected_result, "Test failed: The results do not match the expected output."
 
-    print("Test passed: The join function worked correctly.")
-
+    print("Test passed: The complex query function works correctly.")
 
 if __name__ == "__main__":
     test_extract_one()
