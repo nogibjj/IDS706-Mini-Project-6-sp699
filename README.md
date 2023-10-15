@@ -367,3 +367,14 @@ __`Step 3`__ : Verify if SQL runs correctly.
 
 ## Description of Query
 * __`join`__ </br>
+The "join" query is a query that performs an INNER JOIN, using the "author_id" from the "booksDB" database and the "id" from "authorsDB" to retrieve the names of the authors of the books.</br>
+![image](https://github.com/nogibjj/IDS706-Mini-Project-5-sp699/assets/143478016/569ecb77-45b0-49f4-92be-bbc39604fa5e)</br>
+* __`aggregation`__ </br>
+The "aggregation" query is a query that gathers all the books categorized as "original" by their type and calculates the count of such books.</br>
+![image](https://github.com/nogibjj/IDS706-Mini-Project-6-sp699/assets/143478016/dbb0fc49-ac5f-4be6-9977-6864adf4ebf7)</br>
+* __`sorting`__ </br>
+The "sorting" query is a query that sorts the titles of books in alphabetical order in ascending order, and it displays the id and title of the books.</br>
+![image](https://github.com/nogibjj/IDS706-Mini-Project-5-sp699/assets/143478016/9130215b-e64e-4ef1-b674-03236e4d1a38)</br>
+* __`complex_query`__ </br>
+The "complex_query" query is a query that utilizes the functionalities of the aggregation and sorting queries to retrieve the names of books with the "translated" type, sorting them in alphabetical order in ascending order, and displaying their id and title.</br>
+![image](https://github.com/nogibjj/IDS706-Mini-Project-5-sp699/assets/143478016/455a9e90-7371-46ee-adc7-628f375c892e)</br>
