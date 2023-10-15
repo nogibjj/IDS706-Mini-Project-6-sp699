@@ -82,7 +82,7 @@ def sorting():
     results = cursor.fetchall()
 
     # Close connection
-    conn close()
+    conn.close()
 
     return results
 
