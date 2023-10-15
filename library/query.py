@@ -41,6 +41,9 @@ def join():
         if author_info:
             author_first_name, author_last_name = author_info[0][1], author_info[0][2]
             combined_results.append((book_id, book_title, author_first_name, author_last_name))
+    
+    # 결과 확인을 위한 print 문
+    print(combined_results)
 
     return combined_results
 
