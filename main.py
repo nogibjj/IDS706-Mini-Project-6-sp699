@@ -9,7 +9,7 @@ if __name__ == "__main__":
             file_path="Data/authors.csv")
     load_database_one()
     load_database_two()
-    print(join())
+    join()
     aggregation()
     sorting()
     complex_query()
