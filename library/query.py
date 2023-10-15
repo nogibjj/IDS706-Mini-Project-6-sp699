@@ -72,7 +72,7 @@ def sorting():
 
     # SQL 쿼리 실행
     query = """
-    SELECT title
+    SELECT id, title
     FROM books
     ORDER BY title;
     """
@@ -88,3 +88,5 @@ def sorting():
 
 if __name__ == "__main__":
     join()
+    aggregation()
+    sorting()

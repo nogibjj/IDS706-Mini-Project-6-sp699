@@ -36,7 +36,6 @@ def test_load_database_two():
 def test_join():
     # Execute the join function
     results = join()
-    print(results)
 
     # Compare the results with expected results
     expected_results = [(1, 'Time to Grow Up!', 'Ellen', 'Writer'), (2, 'Your Trip', 'Yao', 'Dou'), (3, 'Lovely Love', 'Donald', 'Brain'), (4, 'Dream Your Life', 'Ellen', 'Writer'), (5, 'Oranges', 'Olga', 'Savelieva'), (6, 'Your Happy Life', 'Yao', 'Dou'), (7, 'Applied AI', 'Jack', 'Smart'), (8, 'My Last Book', 'Ellen', 'Writer')]
@@ -44,16 +43,8 @@ def test_join():
 
     print("Test passed: join function works correctly.")
 
-"""
+
 def test_aggregation():
-    # 데이터베이스 연결
-    conn = sqlite3.connect("booksDB.db")
-    cursor = conn.cursor()
-
-    # 테스트 데이터 삽입 (예시)
-    cursor.execute("CREATE TABLE books (id INTEGER, title TEXT, type TEXT);")
-    cursor.executemany("INSERT INTO books VALUES (?, ?, ?);", [(1, 'Time to Grow Up!', 'original'), (3, 'Lovely Love', 'original'), (4, 'Dream Your Life', 'original'), (8, 'My Last Book', 'original')])
-
     # aggregation 함수 실행
     result = aggregation()
 
@@ -65,14 +56,6 @@ def test_aggregation():
     print("Test passed: The join function worked correctly.")
 
 def test_sorting():
-    # 데이터베이스 연결
-    conn = sqlite3.connect("booksDB.db")
-    cursor = conn.cursor()
-
-    # 테스트 데이터 삽입 (예시)
-    cursor.execute("CREATE TABLE books (id INTEGER, title TEXT);")
-    cursor.executemany("INSERT INTO books VALUES (?, ?);", [(1, 'Time to Grow Up!'), (2, 'Your Trip'), (3, 'Lovely Love'), (4, 'Dream Your Life'), (5, 'Oranges'), (6, 'Your Happy Life'), (7, 'Applied AI'), (8, 'My Last Book')])
-
     # sorting 함수 실행
     results = sorting()
 
@@ -82,7 +65,7 @@ def test_sorting():
     assert results == expected_result, "Test failed: The results do not match the expected output."
 
     print("Test passed: The join function worked correctly.")
-"""
+
 
 if __name__ == "__main__":
     test_extract_one()
@@ -90,5 +73,5 @@ if __name__ == "__main__":
     test_load_database_one()
     test_load_database_two()
     test_join()
-    # test_aggregation()
-    # test_sorting()
+    test_aggregation()
+    test_sorting()

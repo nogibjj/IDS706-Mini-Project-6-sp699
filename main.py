@@ -1,4 +1,3 @@
-import sqlite3
 from library.extract import extract_one, extract_two
 from library.transform import load_database_one, load_database_two
 from library.query import join, aggregation, sorting
@@ -11,5 +10,5 @@ if __name__ == "__main__":
     load_database_one()
     load_database_two()
     print(join())
-    # aggregation()
-    # sorting()
+    aggregation()
+    sorting()
